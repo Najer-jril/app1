@@ -10,7 +10,15 @@ def login(username, password):
     prodi = username[0] + username[1]
     for i in data[prodi]:
         if i["NIM"] == username:
-            return i
+            if i["NIM"] == password:
+                return i
+    # if i != username or i != password:
+    #     return "failed"
+        #     else:
+        #         print("username atau password salah")
+        # else:
+        #     print("username atau password salah")
+        # if i
         
     # for user in user_data.get("users"):
     #     valid = user["username"] == username and user["password"] == password
