@@ -7,24 +7,26 @@ from qframelesswindow import FramelessWindow
 from PyQt5.QtWidgets import QMessageBox
 import validasi
 import tesdb
+import cb
 
 class Window(FramelessWindow):
     def __init__(self):
         super(Window, self).__init__()
         loadUi("main.ui", self)
         self.titleBar.raise_()
+        self.setGeometry(20,30, 1333, 650)
+        # self.setFixedHeight(650)
+        # self.setFixedWidth(1333)
         self.logo.setPixmap(QPixmap("logo OS.png").scaled(250, 250))
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
         self.btn_guest.clicked.connect(self.loginguest)
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
-        self.ComboBox.addItem("Meninggalkan materi saat sesi materi berlangsung dengan durasi yang sangat lama, secara berulang tanpa adanya keterangan yang jelas serta tidak mendapatkan izin dari LO (Sedang)", "5")
-        self.ComboBox.addItem("tes1 -5", "5")
-        self.ComboBox.addItem("tes2 -15", "152366")
+        self.combobox()
         # self.ComboBox.adjustSize()
         # def combo
     
@@ -56,6 +58,16 @@ class Window(FramelessWindow):
     def loginguest(self):
         self.stackedWidget.setCurrentIndex(1)
     
+    # def UserPage(self):
+    #     self.stackedWidget.setCurrentIndex(2)
+    #     nim = self.Ledit_NIM_g.text()
+    #     data = tesdb.get_data_by_nim(nim)
+    #     if data:
+    #         self.nama_g.setText(data["nama"])
+    #         self.nim_g.setText(data["NIM"])
+    #         self.prodi_g.setText(data["prodi"])
+    #         self.skor_g.setText(str(data["skor"]))
+
 
     def searchdata(self, role):
         if role == "admin":
@@ -75,13 +87,18 @@ class Window(FramelessWindow):
                 self.nama_g.setText(data["nama"])
                 self.nim_g.setText(data["NIM"])
                 self.prodi_g.setText(data["prodi"])
-                self.skor_g.setText(str(data["skor"]))
+                self.skor_g.setText(str(data["skor"]))  
             else:
                 print("failed")
 
     def logout(self):
         self.stackedWidget.setCurrentIndex(0)
 
+    def combobox(self):
+        rules = cb.load_rules()
+        self.ComboBox.addItem("pilih kesalahan")
+        for rule in rules:
+            self.ComboBox.addItem(rule["kesalahan"])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

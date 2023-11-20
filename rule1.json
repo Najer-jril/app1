@@ -1,0 +1,123 @@
+{
+    "rule": [
+      {
+        "kesalahan": "Mengonsumsi makanan ringan pada saat sesi materi berlangsung, diluar jam istirahat dan tanpa adanya izin dari LO maupun pemateri",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Menggunakan perhiasan selama kegiatan berlangsung",
+        "poin": 5
+      },
+      { "kesalahan": "Menggunakan make up yang mencolok", "poin": 5 },
+      {
+        "kesalahan": "Menggunakan pakaian tidak sesuai dengan ketentuan yang telah ditetapkan",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Menggunakan atribut tidak sesuai dengan ketentuan yang telah ditetapkan",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Tidak mengikuti petunjuk dan instruksi dari panitia terhadap jalannya kegiatan",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Tidak memperhatikan materi yang disampaikan selama kegiatan berlangsung",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Tidak menjaga kekondusifan selama materi berlangsung",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Terlambat mengerjakan dan atau mengumpulkan penugasan pra SPIn ETAM yang diberikan, maka akan mendapat pelanggaran",
+        "poin": 5
+      },
+      {
+        "kesalahan": "Meninggalkan materi saat sesi materi berlangsung dengan durasi yang sangat lama,secara berulang tanpa adanya keterangan yang jelas serta tidak mendapatkan izin dari LO",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Datang terlambat dengan durasi melebihi 10 menit pada saat sesi materi tanpa adanya konfirmasi dan izin kepada LO",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Mengonsumsi makanan berat pada saat sesi materi berlangsung, diluar jam istirahat dan tanpa adanya izin dari LO maupun pemateri",
+        "poin": 15
+      },
+      { "kesalahan": "Rambut tidak sesuai dengan ketentuan", "poin": 15 },
+      {
+        "kesalahan": "Menyebarkan konten tentang kegiatan SPIn ETAM 2023 tanpa izin",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Tidak menggunakan pakaian dan atribut sesuai dengan ketentuan yang telah ditetapkan",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Tidak menghormati dan menghargai pembicara, pemateri dan seluruh panitia SPIn ETAM 2023 selama kegiatan berlangsung",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Tidak menggunakan pakaian rapi dan sopan sesuai dengan ketentuan yang telah ditetapkan",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Meninggalkan tempat berlangsungnya penyampaian materi pada saat sesi materi berlangsung dengan durasi melebihi 10 menit serta tanpa adanya konfirmasi kepada LO",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Tidak mengikuti kegiatan social movement tanpa keterangan yang jelas, maka akan mendapat pelanggaran",
+        "poin": 15
+      },
+      {
+        "kesalahan": "Bertutur kata yang menyinggung SARA dan berkata kasar atau mengumpat selama kegiatan berlangsung",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Memperlihatkan bagian tubuh yang terdapat tato atau menggunakan tindik bagi mahasiswa pria",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Membawa korek, rokok, vape, pod, dan mod selama kegiatan berlangsung",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Tidak menjaga etika dan kesopanan selama materi dan kegiatan berlangsung",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Meninggalkan tempat berlangsungnya penyampaian materi saat sesi materi berlangsung dengan durasi melebihi 10 menit sebanyak 2 kali berturut-turut serta tanpa adanya konfirmasi kepada LO",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Tidak mengikuti sesi materi tanpa adanya keterangan dan konfirmasi yang jelas kepada LO ",
+        "poin": 35
+      },
+      {
+        "kesalahan": " Melakukan plagiarisme rangkuman terkait materi yang ditinggalkan pada sanksi yang telah ditetapkan",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Tidak mengerjakan penugasan pasca SPIn ETAM yang diberikan, maka akan mendapat pelanggaran",
+        "poin": 35
+      },
+      {
+        "kesalahan": "Merokok, minum minuman keras, membawa narkoba, membawa senjata tajam, senjata api, dan segala bentuk benda berbahaya lainnya selama kegiatan berlangsung",
+        "poin": 100
+      },
+      {
+        "kesalahan": "Membuat, memperbanyak, menyebarluaskan dan menyiarkan konten dan segala hal yang berkaitan dengan pornografi selama kegiatan berlangsung",
+        "poin": 100
+      },
+      {
+        "kesalahan": "Tidak mematuhi seluruh peraturan dan tata tertib SPIn ETAM 2023",
+        "poin": 100
+      },
+      {
+        "kesalahan": "peserta tidak membuat surat izin dan rangkuman sebanyak 1 kali, maka peserta dianggap tidak mengikuti sesi materi dan wajib membuat poster. Jika tidak membuat poster akan diberikan pengurangan nilai 100%",
+        "poin": 100
+      }
+    ]
+  }
+  

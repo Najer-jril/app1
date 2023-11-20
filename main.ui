@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
-    <height>425</height>
+    <width>1333</width>
+    <height>650</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -19,8 +25,14 @@
    </property>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="mainpage">
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -380,7 +392,7 @@
         <string>Cari NIM</string>
        </property>
       </widget>
-      <widget class="TitleLabel" name="TitleLabel_7">
+      <widget class="TitleLabel" name="TitleName">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -393,10 +405,10 @@
         <string>Nama</string>
        </property>
       </widget>
-      <widget class="BodyLabel" name="BodyLabel_46">
+      <widget class="BodyLabel" name="prodiUser">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>60</y>
          <width>63</width>
          <height>19</height>
@@ -406,11 +418,11 @@
         <string>prodi</string>
        </property>
       </widget>
-      <widget class="BodyLabel" name="BodyLabel_47">
+      <widget class="BodyLabel" name="skorUser">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>90</y>
+         <x>0</x>
+         <y>80</y>
          <width>63</width>
          <height>19</height>
         </rect>
@@ -419,24 +431,11 @@
         <string>skor</string>
        </property>
       </widget>
-      <widget class="TitleLabel" name="TitleLabel_11">
+      <widget class="BodyLabel" name="nimUser">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>0</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>(#peringkat)</string>
-       </property>
-      </widget>
-      <widget class="BodyLabel" name="BodyLabel_48">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
+         <x>0</x>
+         <y>40</y>
          <width>63</width>
          <height>19</height>
         </rect>
@@ -674,7 +673,7 @@
         </rect>
        </property>
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
