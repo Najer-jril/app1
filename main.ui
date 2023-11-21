@@ -799,7 +799,7 @@ PillToolButton:disabled:checked {
       <string>Cari NIM</string>
      </property>
     </widget>
-    <widget class="TitleLabel" name="User_nama">
+    <widget class="TitleLabel" name="user_nama">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -812,7 +812,7 @@ PillToolButton:disabled:checked {
       <string>Nama</string>
      </property>
     </widget>
-    <widget class="BodyLabel" name="User_prodi">
+    <widget class="BodyLabel" name="user_prodi">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -825,7 +825,7 @@ PillToolButton:disabled:checked {
       <string>prodi</string>
      </property>
     </widget>
-    <widget class="BodyLabel" name="User_skor">
+    <widget class="BodyLabel" name="user_skor">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -838,7 +838,7 @@ PillToolButton:disabled:checked {
       <string>skor</string>
      </property>
     </widget>
-    <widget class="BodyLabel" name="User_nim">
+    <widget class="BodyLabel" name="user_nim">
      <property name="geometry">
       <rect>
        <x>320</x>
@@ -944,10 +944,10 @@ PillToolButton:disabled:checked {
     <zorder>PushButton_12</zorder>
     <zorder>btn_logout</zorder>
     <zorder>leditSearchNIM_6</zorder>
-    <zorder>User_nama</zorder>
-    <zorder>User_prodi</zorder>
-    <zorder>User_skor</zorder>
-    <zorder>User_nim</zorder>
+    <zorder>user_nama</zorder>
+    <zorder>user_prodi</zorder>
+    <zorder>user_skor</zorder>
+    <zorder>user_nim</zorder>
     <zorder>tableWidget</zorder>
    </widget>
    <widget class="QWidget" name="adminpage_3">
