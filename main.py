@@ -15,8 +15,7 @@ class Window(FramelessWindow):
         loadUi("main.ui", self)
         self.titleBar.raise_()
         self.setGeometry(20,30, 1333, 650)
-        # self.setFixedHeight(650)
-        # self.setFixedWidth(1333)
+        self.setFixedSize(1333, 650)
         self.logo.setPixmap(QPixmap("logo OS.png").scaled(250, 250))
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
@@ -27,14 +26,7 @@ class Window(FramelessWindow):
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
         self.combobox()
-        # self.ComboBox.adjustSize()
-        # def combo
-    
         
-
-    # def updateskor(self):
-        # print(skor)
-
 
     def login(self):
         username = self.ledit_username.text()
@@ -48,7 +40,6 @@ class Window(FramelessWindow):
             elif user_data["role"] == "admin":
                 self.stackedWidget.setCurrentIndex(3)
         except:
-            # print("failed")
             msg = QMessageBox()
             msg.setText("username atau password salah")
             msg.setWindowTitle("salah oi")
