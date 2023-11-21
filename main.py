@@ -174,79 +174,26 @@ class Window(QWidget):
         data = json.load(file)
         nim = self.Ledit_NIM.text()
         prodi = nim[0] + nim[1]
-        data_m = []
         for i in data[prodi]:
             if i["NIM"] == nim:
+                data_m = []
                 data_m.append(i)
-                return i
-        print(data_m)
         rules = data2["rule"]
         for j in rules:
             if selected == j["kesalahan"]:
-                print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
-        file2.close()
+                poin = 0
+                poin += int(j["poin"])
         file.close()
-            
-
-            
-            
-
-
-            # if self.update_skor.clicked:
-
-    def skoring(self, selected):
-        file2 = open("rule1.json", "r")
-        data2 = json.load(file2)
-        file = open("db.json", "r")
-        data = json.load(file)
-        nim = self.Ledit_NIM.text()
-        prodi = nim[0] + nim[1]
-        data_m = []
-        for i in data[prodi]:
-            if i["NIM"] == nim:
-                data_m.append(i)
-                return i
-        print(data_m)
-        rules = data2["rule"]
-        for j in rules:
-            if selected == j["kesalahan"]:
-                print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
-        file2.close()
+        skor_a = data_m["skor"]
+        score = skor_a - poin
+        for k in data[prodi]:
+            if k["NIM"] == nim:
+                data[prodi][k]["skor"] = score
+                file = open("db.json", "w")
+                json.dump(data[prodi][k]["skor"], file)
         file.close()
-
-            # if self.update_skor.clicked:
-
-    def skoring(self, selected):
-        file2 = open("rule1.json", "r")
-        data2 = json.load(file2)
-        file = open("db.json", "r")
-        data = json.load(file)
-        nim = self.Ledit_NIM.text()
-        prodi = nim[0] + nim[1]
-        data_m = []
-        for i in data[prodi]:
-            if i["NIM"] == nim:
-                data_m.append(i)
-                return i
-        print(data_m)
-        rules = data2["rule"]
-        for j in rules:
-            if selected == j["kesalahan"]:
-                print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
         file2.close()
-        file.close()
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
