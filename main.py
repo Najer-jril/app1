@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import sys
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QTableWidgetItem
 from PyQt5.uic import loadUi
 from qfluentwidgets import *
 from qframelesswindow import FramelessWindow
@@ -26,7 +28,40 @@ class Window(FramelessWindow):
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
         self.combobox()
+        self.tableWidget.setColumnWidth(0, 540)
+        self.tableWidget.setColumnWidth(1, 200)
+        self.tableWidget.setColumnWidth(2, 355)
+        self.tableWidget.setColumnWidth(3, 100)
+        self.tabledata()
         
+    def tabledata(self):
+        file = open("db.json", "r")
+        data = json.load(file)
+        row = 0
+        c = 0
+        for a in range(1,23):
+            if a < 10:
+                b = len(data["0" + str(a)])
+                c += b
+            else:
+                b = len(data[str(a)])
+                c += b
+        self.tableWidget.setRowCount(c)
+        for i in range(1,23):
+            if i < 10:
+                for j in data["0" + str(i)]:
+                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j["nama"]))
+                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
+                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j["prodi"]))
+                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j["skor"])))
+                    row += 1
+            else:
+                for j in data[str(i)]:
+                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j['nama']))
+                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
+                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
+                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j['skor'])))
+                    row += 1
 
     def login(self):
         username = self.ledit_username.text()
@@ -37,6 +72,10 @@ class Window(FramelessWindow):
                 self.stackedWidget.setCurrentIndex(2)
                 self.userpage.setProperty("user_data", user_data)
                 print(self.userpage.property("user_data"))
+                self.user_nama.setText(str(user_data["nama"]))
+                self.user_nim.setText(str(user_data["NIM"]))
+                self.user_skor.setText(str(user_data[str("skor")]))
+                self.user_prodi.setText(str(user_data["prodi"]))
             elif user_data["role"] == "admin":
                 self.stackedWidget.setCurrentIndex(3)
         except:
