@@ -32,7 +32,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="mainpage">
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -482,11 +482,16 @@
       <widget class="PushButton" name="PushButton_4">
        <property name="geometry">
         <rect>
-         <x>240</x>
-         <y>60</y>
-         <width>102</width>
-         <height>32</height>
+         <x>600</x>
+         <y>70</y>
+         <width>131</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>search</string>
@@ -495,79 +500,115 @@
       <widget class="BodyLabel" name="prodi_a">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>190</y>
-         <width>451</width>
-         <height>21</height>
+         <x>120</x>
+         <y>220</y>
+         <width>1061</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>tesdata</string>
+        <string>-</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="nama_a">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>120</x>
          <y>130</y>
-         <width>451</width>
-         <height>21</height>
+         <width>1071</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>tesdata</string>
+        <string>-</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="BodyLabel_9">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>220</y>
-         <width>34</width>
-         <height>19</height>
+         <y>270</y>
+         <width>41</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>skor</string>
+        <string>Skor</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="BodyLabel_15">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>190</y>
-         <width>34</width>
-         <height>19</height>
+         <y>220</y>
+         <width>51</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>prodi</string>
+        <string>Prodi</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="BodyLabel_16">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>160</y>
-         <width>34</width>
-         <height>19</height>
+         <y>170</y>
+         <width>41</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>nim</string>
+        <string>NIM</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="skor_a">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>220</y>
-         <width>451</width>
-         <height>21</height>
+         <x>120</x>
+         <y>270</y>
+         <width>1041</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>tesdata</string>
+        <string>-</string>
        </property>
       </widget>
       <widget class="SubtitleLabel" name="SubtitleLabel_3">
@@ -575,38 +616,53 @@
         <rect>
          <x>10</x>
          <y>80</y>
-         <width>119</width>
+         <width>351</width>
          <height>27</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>data</string>
+        <string>Data Mahasiswa</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="nim_a">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>160</y>
-         <width>451</width>
-         <height>21</height>
+         <x>120</x>
+         <y>170</y>
+         <width>1061</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>tesdata</string>
+        <string>-</string>
        </property>
       </widget>
       <widget class="BodyLabel" name="BodyLabel_17">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>130</y>
-         <width>34</width>
-         <height>19</height>
+         <y>120</y>
+         <width>61</width>
+         <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>nama</string>
+        <string>Nama</string>
        </property>
       </widget>
       <widget class="SubtitleLabel" name="SubtitleLabel_4">
@@ -614,9 +670,14 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>119</width>
-         <height>27</height>
+         <width>121</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>28</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>ADMIN</string>
@@ -625,8 +686,8 @@
       <widget class="ComboBox" name="ComboBox">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>270</y>
+         <x>420</x>
+         <y>360</y>
          <width>511</width>
          <height>32</height>
         </rect>
@@ -676,11 +737,11 @@ ComboBox:disabled {
 </string>
        </property>
       </widget>
-      <widget class="PushButton" name="PushButton">
+      <widget class="PushButton" name="update_skor">
        <property name="geometry">
         <rect>
-         <x>240</x>
-         <y>330</y>
+         <x>620</x>
+         <y>420</y>
          <width>102</width>
          <height>32</height>
         </rect>
@@ -692,7 +753,7 @@ ComboBox:disabled {
       <widget class="PushButton" name="btn_logout3">
        <property name="geometry">
         <rect>
-         <x>490</x>
+         <x>1210</x>
          <y>20</y>
          <width>102</width>
          <height>32</height>
@@ -711,9 +772,9 @@ ComboBox:disabled {
       <widget class="LineEdit" name="Ledit_NIM">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>380</x>
          <y>20</y>
-         <width>211</width>
+         <width>561</width>
          <height>33</height>
         </rect>
        </property>

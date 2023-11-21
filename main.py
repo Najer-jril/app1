@@ -22,17 +22,19 @@ class Window(FramelessWindow):
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
-        self.stackedWidget.setCurrentIndex(3)
+        # self.PushButton_4.clicked.connect(lambda: self.skoring())
+        self.stackedWidget.setCurrentIndex(0)
         self.btn_guest.clicked.connect(self.loginguest)
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
-        self.combobox()
         self.tableWidget.setColumnWidth(0, 540)
         self.tableWidget.setColumnWidth(1, 200)
         self.tableWidget.setColumnWidth(2, 355)
         self.tableWidget.setColumnWidth(3, 100)
         self.tabledata()
+        self.combobox()
+        self.update_skor.clicked.connect(lambda: self.skoring(self.ComboBox.currentText()))
         
     def tabledata(self):
         file = open("db.json", "r")
@@ -78,27 +80,16 @@ class Window(FramelessWindow):
                 self.user_prodi.setText(str(user_data["prodi"]))
             elif user_data["role"] == "admin":
                 self.stackedWidget.setCurrentIndex(3)
+                
         except:
             msg = QMessageBox()
             msg.setText("username atau password salah")
             msg.setWindowTitle("salah oi")
-            msg.exec_()
-            
+            msg.exec_()           
 
     def loginguest(self):
         self.stackedWidget.setCurrentIndex(1)
     
-    # def UserPage(self):
-    #     self.stackedWidget.setCurrentIndex(2)
-    #     nim = self.Ledit_NIM_g.text()
-    #     data = tesdb.get_data_by_nim(nim)
-    #     if data:
-    #         self.nama_g.setText(data["nama"])
-    #         self.nim_g.setText(data["NIM"])
-    #         self.prodi_g.setText(data["prodi"])
-    #         self.skor_g.setText(str(data["skor"]))
-
-
     def searchdata(self, role):
         if role == "admin":
             nim = self.Ledit_NIM.text()
@@ -108,6 +99,7 @@ class Window(FramelessWindow):
                 self.nim_a.setText(data["NIM"])
                 self.prodi_a.setText(data["prodi"])
                 self.skor_a.setText(str(data["skor"]))
+                
             else:
                 print("failed")
         elif role == "guest":
@@ -129,6 +121,36 @@ class Window(FramelessWindow):
         self.ComboBox.addItem("pilih kesalahan")
         for rule in rules:
             self.ComboBox.addItem(rule["kesalahan"])
+        # if self.update_skor.clicked:
+
+    def skoring(self, selected):
+        file2 = open("rule1.json", "r")
+        data2 = json.load(file2)
+        file = open("db.json", "r")
+        data = json.load(file)
+        nim = self.Ledit_NIM.text()
+        prodi = nim[0] + nim[1]
+        data_m = []
+        for i in data[prodi]:
+            if i["NIM"] == nim:
+                data_m.append(i)
+                return i
+        print(data_m)
+        rules = data2["rule"]
+        for j in rules:
+            if selected == j["kesalahan"]:
+                print (j)
+                return j
+        score = data_m["skor"] - j["poin"]
+        data[prodi][data_m].pop("skor")
+        data[prodi](data_m)["skor"] = score
+        file2.close()
+        file.close()
+            
+
+            
+            
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
