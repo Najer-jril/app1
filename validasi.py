@@ -1,7 +1,7 @@
 import json
 
-with open('useroradmin.json', 'r') as file:
-    user_data = json.load(file)
+# with open('useroradmin.json', 'r') as file:
+#     user_data = json.load(file)
 
 file = open("db.json", "r")
 data = json.load(file)

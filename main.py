@@ -38,7 +38,7 @@ class Window(QWidget):
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
         # self.PushButton_4.clicked.connect(lambda: self.skoring())
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
         self.btn_guest.clicked.connect(self.loginguest)
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
@@ -174,79 +174,39 @@ class Window(QWidget):
         data = json.load(file)
         nim = self.Ledit_NIM.text()
         prodi = nim[0] + nim[1]
-        data_m = []
         for i in data[prodi]:
-            if i["NIM"] == nim:
-                data_m.append(i)
-                return i
-        print(data_m)
+             if i["NIM"] == nim:
+                data_m = dict(i)
+                print (data_m)
+
         rules = data2["rule"]
         for j in rules:
             if selected == j["kesalahan"]:
                 print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
-        file2.close()
+                poin = 0
+                poin += int(j['poin'])
+        skor1 = data_m["skor"]
+        skor_up = skor1 - poin
+        print(skor_up)
+        score = {"skor": skor_up}
+        data_m1 = int(nim[6] + nim[7])
+        data_m1 -= 1
+        print (data_m1)
+         #= skor_up
+        "db.json"[prodi][data_m1].update(score)
+        print (data[prodi][data_m1]["skor"])
+        
+        
+        # data_m["skor"] = score
+        # # data_m.pop("skor")
+        # # data_m["skor"] = score
+        # data_m1 = int(nim[6] + nim[7])
+        # data_m1 -= 1
+        # data[prodi][data_m1]["skor"] = skor_up
+        # data[prodi][data_m1].pop("skor")
+        # data[prodi][data_m1]["skor"] = score
         file.close()
-            
-
-            
-            
-
-
-            # if self.update_skor.clicked:
-
-    def skoring(self, selected):
-        file2 = open("rule1.json", "r")
-        data2 = json.load(file2)
-        file = open("db.json", "r")
-        data = json.load(file)
-        nim = self.Ledit_NIM.text()
-        prodi = nim[0] + nim[1]
-        data_m = []
-        for i in data[prodi]:
-            if i["NIM"] == nim:
-                data_m.append(i)
-                return i
-        print(data_m)
-        rules = data2["rule"]
-        for j in rules:
-            if selected == j["kesalahan"]:
-                print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
         file2.close()
-        file.close()
-
-            # if self.update_skor.clicked:
-
-    def skoring(self, selected):
-        file2 = open("rule1.json", "r")
-        data2 = json.load(file2)
-        file = open("db.json", "r")
-        data = json.load(file)
-        nim = self.Ledit_NIM.text()
-        prodi = nim[0] + nim[1]
-        data_m = []
-        for i in data[prodi]:
-            if i["NIM"] == nim:
-                data_m.append(i)
-                return i
-        print(data_m)
-        rules = data2["rule"]
-        for j in rules:
-            if selected == j["kesalahan"]:
-                print (j)
-                return j
-        score = data_m["skor"] - j["poin"]
-        data[prodi][data_m].pop("skor")
-        data[prodi](data_m)["skor"] = score
-        file2.close()
-        file.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
