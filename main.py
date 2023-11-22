@@ -196,13 +196,19 @@ class Window(QWidget):
         skor1 = data_m["skor"]
         skor_up = skor1 - poin
         print(skor_up)
-        score = {"skor": skor_up}
-        data_m1 = int(nim[6] + nim[7])
-        data_m1 -= 1
-        print (data_m1)
-         #= skor_up
-        "db.json"[prodi][data_m1].update(score)
-        print (data[prodi][data_m1]["skor"])
+
+        for mhs in data[prodi]:
+            if mhs["NIM"] == nim:
+                mhs["skor"] = skor_up
+
+        with open('db.json', 'w') as file:
+            json.dump(data, file, indent=4)
+        # score = {"skor": skor_up}
+        # data_m1 = int(nim[6] + nim[7])
+        # data_m1 -= 1
+        # print (data_m1)
+        # "db.json"[prodi][data_m1].update(score)
+        # print (data[prodi][data_m1]["skor"])
         
         
         # data_m["skor"] = score
