@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+from PyQt5 import QtGui
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem
 from PyQt5.uic import loadUi
@@ -17,7 +18,8 @@ class Window(QWidget):
         # self.titleBar.raise_()
         self.setGeometry(20,50, 1333, 650)
         self.setFixedSize(1333, 650)
-
+        self.setWindowTitle("OFFSCORE")
+        self.setWindowIcon(QtGui.QIcon('OFFSCORE_LOGO.png'))
 
         # self.labelbackground = BodyLabel(self)
         # self.labelbackground.
@@ -99,7 +101,7 @@ class Window(QWidget):
         except:
             msg = QMessageBox()
             msg.setText("username atau password salah")
-            msg.setWindowTitle("salah oi")
+            msg.setWindowTitle("Ooops...")
             msg.exec_()
             
     def tabledata(self):
@@ -137,25 +139,31 @@ class Window(QWidget):
     def searchdata(self, role):
         if role == "admin":
             nim = self.Ledit_NIM.text()
-            data = tesdb.get_data_by_nim(nim)
+            data = tesdb.get_data_by_nim(nim)        
             if data:
-                self.nama_a.setText(data["nama"])
-                self.nim_a.setText(data["NIM"])
-                self.prodi_a.setText(data["prodi"])
-                self.skor_a.setText(str(data["skor"]))
-                
+                    self.nama_a.setText(data["nama"])
+                    self.nim_a.setText(data["NIM"])
+                    self.prodi_a.setText(data["prodi"])
+                    self.skor_a.setText(str(data["skor"]))
             else:
-                print("failed")
+                msg = QMessageBox()
+                msg.setText("NIM tidak terdaftar")
+                msg.setWindowTitle("Ooops...")
+                msg.exec_()       
+
         elif role == "guest":
-            nim = self.Ledit_NIM_g.text()
-            data = tesdb.get_data_by_nim(nim)
-            if data:
-                self.nama_g.setText(data["nama"])
-                self.nim_g.setText(data["NIM"])
-                self.prodi_g.setText(data["prodi"])
-                self.skor_g.setText(str(data["skor"]))  
-            else:
-                print("failed")
+                nim = self.Ledit_NIM_g.text()
+                data = tesdb.get_data_by_nim(nim)
+                if data:
+                    self.nama_g.setText(data["nama"])
+                    self.nim_g.setText(data["NIM"])
+                    self.prodi_g.setText(data["prodi"])
+                    self.skor_g.setText(str(data["skor"]))  
+                else:
+                    msg = QMessageBox()
+                    msg.setText("NIM tidak terdaftar")
+                    msg.setWindowTitle("Ooops...")
+                    msg.exec_()
 
     def logout(self):
         self.stackedWidget.setCurrentIndex(0)
