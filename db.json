@@ -2,6 +2,11 @@
     "99": [
         {
             "nama": "admin",
+            "NIM": "9999",
+            "role": "admin"
+        },
+        {
+            "nama": "admin",
             "NIM": "9901",
             "role": "admin"
         },
@@ -343,7 +348,7 @@
             "nama": "Muhammad 'Aaqil Saputra",
             "NIM": "11231047",
             "prodi": "Informatika",
-            "skor": 100,
+            "skor": 15,
             "role": "user"
         },
         {

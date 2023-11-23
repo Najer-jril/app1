@@ -137,42 +137,49 @@ class Window(QWidget):
         self.stackedWidget.setCurrentIndex(1)
     
     def searchdata(self, role):
-        if role == "admin":
-            nim = self.Ledit_NIM.text()
-            data = tesdb.get_data_by_nim(nim)        
-            if data:
-                    self.nama_a.setText(data["nama"])
-                    self.nim_a.setText(data["NIM"])
-                    self.prodi_a.setText(data["prodi"])
-                    self.skor_a.setText(str(data["skor"]))
-            else:
-                msg = QMessageBox()
-                msg.setText("NIM tidak terdaftar")
-                msg.setWindowTitle("Ooops...")
-                msg.exec_()       
-
-        elif role == "guest":
-                nim = self.Ledit_NIM_g.text()
-                data = tesdb.get_data_by_nim(nim)
+        try:
+            if role == "admin":
+                nim = self.Ledit_NIM.text()
+                data = tesdb.get_data_by_nim(nim)        
                 if data:
-                    self.nama_g.setText(data["nama"])
-                    self.nim_g.setText(data["NIM"])
-                    self.prodi_g.setText(data["prodi"])
-                    self.skor_g.setText(str(data["skor"]))  
+                        self.nama_a.setText(data["nama"])
+                        self.nim_a.setText(data["NIM"])
+                        self.prodi_a.setText(data["prodi"])
+                        self.skor_a.setText(str(data["skor"]))
                 else:
                     msg = QMessageBox()
                     msg.setText("NIM tidak terdaftar")
                     msg.setWindowTitle("Ooops...")
                     msg.exec_()
+           
 
+            elif role == "guest":
+                    nim = self.Ledit_NIM_g.text()
+                    data = tesdb.get_data_by_nim(nim)
+                    if data:
+                        self.nama_g.setText(data["nama"])
+                        self.nim_g.setText(data["NIM"])
+                        self.prodi_g.setText(data["prodi"])
+                        self.skor_g.setText(str(data["skor"]))  
+                    else:
+                        msg = QMessageBox()
+                        msg.setText("NIM tidak terdaftar")
+                        msg.setWindowTitle("Ooops...")
+                        msg.exec_()
+        except IndexError:
+                        msg = QMessageBox()
+                        msg.setText("Namanya mana oi")
+                        msg.setWindowTitle("Ooops...")
+                        msg.exec_()
+        
     def logout(self):
         self.stackedWidget.setCurrentIndex(0)
 
     def combobox(self):
         rules = cb.load_rules()
-        self.ComboBox.addItem("pilih kesalahan")
         for rule in rules:
             self.ComboBox.addItem(rule["kesalahan"])
+
         # if self.update_skor.clicked:
 
     def skoring(self, selected):
@@ -181,28 +188,34 @@ class Window(QWidget):
         file = open("db.json", "r")
         data = json.load(file)
         nim = self.Ledit_NIM.text()
-        prodi = nim[0] + nim[1]
-        for i in data[prodi]:
-             if i["NIM"] == nim:
-                data_m = dict(i)
-                print (data_m)
+        try:
+            prodi = nim[0] + nim[1]
+            for i in data[prodi]:
+                 if i["NIM"] == nim:
+                    data_m = dict(i)
+                    print (data_m)
 
-        rules = data2["rule"]
-        for j in rules:
-            if selected == j["kesalahan"]:
-                print (j)
-                poin = 0
-                poin += int(j['poin'])
-        skor1 = data_m["skor"]
-        skor_up = skor1 - poin
-        print(skor_up)
+            rules = data2["rule"]
+            for j in rules:
+                if selected == j["kesalahan"]:
+                    print (j)
+                    poin = 0
+                    poin += int(j['poin'])
+            skor1 = data_m["skor"]
+            skor_up = skor1 - poin
+            print(skor_up)
+            for mhs in data[prodi]:
+                if mhs["NIM"] == nim:
+                    mhs["skor"] = skor_up
 
-        for mhs in data[prodi]:
-            if mhs["NIM"] == nim:
-                mhs["skor"] = skor_up
-
-        with open('db.json', 'w') as file:
-            json.dump(data, file, indent=4)
+            with open('db.json', 'w') as file:
+                json.dump(data, file, indent=4)
+            
+        except IndexError:
+                        msg = QMessageBox()
+                        msg.setText("Namanya mana oi")
+                        msg.setWindowTitle("Ooops...")
+                        msg.exec_()
         # score = {"skor": skor_up}
         # data_m1 = int(nim[6] + nim[7])
         # data_m1 -= 1
