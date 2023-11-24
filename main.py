@@ -40,7 +40,7 @@ class Window(QWidget):
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
         # self.PushButton_4.clicked.connect(lambda: self.skoring())
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         self.btn_guest.clicked.connect(self.loginguest)
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
@@ -104,35 +104,6 @@ class Window(QWidget):
             msg.setWindowTitle("Ooops...")
             msg.exec_()
             
-    def tabledata(self):
-        file = open("db.json", "r")
-        data = json.load(file)
-        row = 0
-        c = 0
-        for a in range(1,23):
-            if a < 10:
-                b = len(data["0" + str(a)])
-                c += b
-            else:
-                b = len(data[str(a)])
-                c += b
-        self.tableWidget.setRowCount(c)
-        for i in range(1,23):
-            if i < 10:
-                for j in data["0" + str(i)]:
-                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j["nama"]))
-                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
-                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j["prodi"]))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j["skor"])))
-                    row += 1
-            else:
-                for j in data[str(i)]:
-                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j['nama']))
-                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
-                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j['skor'])))
-                    row += 1
-
     def loginguest(self):
         self.stackedWidget.setCurrentIndex(1)
     
