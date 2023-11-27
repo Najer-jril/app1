@@ -18,24 +18,23 @@ class Window(QWidget):
         loadUi("main.ui", self)
         # self.titleBar.raise_()
         self.setGeometry(20,50, 1333, 650)
-        self.setFixedSize(1333, 650)
+        self.setFixedSize(1333, 650)    
         self.setWindowTitle("OFFSCORE")
         self.setWindowIcon(QtGui.QIcon('OFFSCORE_LOGO.png'))
 
         # self.labelbackground = BodyLabel(self)
         # self.labelbackground.
         self.setFixedSize(1333, 650)
-        self.bg.setPixmap(QPixmap("LOGIN.png"))
+        self.bg.setPixmap(QPixmap("OFF-SCORE.png"))
 
         self.setFixedSize(1333, 650)
-        self.Gu.setPixmap(QPixmap("G.png"))
-        self.ava.setPixmap(QPixmap("ava.png"))
+        self.Gu.setPixmap(QPixmap("GUEST.png"))
 
         self.setFixedSize(1333, 650)
-        self.admbg.setPixmap(QPixmap("G.png"))
+        self.admbg.setPixmap(QPixmap("ADMIN.png"))
 
         self.setFixedSize(1333, 650)
-        self.usrbg.setPixmap(QPixmap("G.png"))
+        self.usrbg.setPixmap(QPixmap("USER.png"))
 
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
