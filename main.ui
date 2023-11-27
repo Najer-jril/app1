@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1333</width>
+    <width>1391</width>
     <height>650</height>
    </rect>
   </property>
@@ -22,10 +22,10 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>1315</width>
-     <height>632</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1333</width>
+     <height>650</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -869,6 +869,9 @@ PillToolButton:disabled:checked {
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
@@ -876,10 +879,13 @@ PillToolButton:disabled:checked {
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
      <property name="showGrid">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
      </property>
      <property name="rowCount">
       <number>0</number>
@@ -898,6 +904,9 @@ PillToolButton:disabled:checked {
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
       <number>30</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
      </attribute>
      <column>
       <property name="text">

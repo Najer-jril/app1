@@ -69,23 +69,29 @@ class Window(QWidget):
                 b = len(data[str(a)])
                 c += b
         self.tableWidget.setRowCount(c)
+        
         for i in range(1,23):
             if i < 10:
                 for j in data["0" + str(i)]:
+                    item = QTableWidgetItem()
+                    item.setData(Qt.EditRole, int(j["skor"]))
                     self.tableWidget.setItem(row, 0, QTableWidgetItem(j["nama"]))
                     self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
                     self.tableWidget.setItem(row, 2, QTableWidgetItem(j["prodi"]))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j["skor"])))
+                    self.tableWidget.setItem(row, 3, item)
                     row += 1
             else:
                 for j in data[str(i)]:
+                    item = QTableWidgetItem()
+                    item.setData(Qt.EditRole, int(j["skor"]))
                     self.tableWidget.setItem(row, 0, QTableWidgetItem(j['nama']))
                     self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
                     self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j['skor'])))
+                    self.tableWidget.setItem(row, 3, item)
                     row += 1
+            # self.tableWidget.sortItems(3, QtCore.Qt.AscendingOrder)
         self.tableWidget.setSortingEnabled(True)
-        file.close()
+        
 
     def login(self):
         username = self.ledit_username.text()
