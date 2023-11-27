@@ -104,35 +104,6 @@ class Window(QWidget):
             msg.setWindowTitle("Ooops...")
             msg.exec_()
             
-    def tabledata(self):
-        file = open("db.json", "r")
-        data = json.load(file)
-        row = 0
-        c = 0
-        for a in range(1,23):
-            if a < 10:
-                b = len(data["0" + str(a)])
-                c += b
-            else:
-                b = len(data[str(a)])
-                c += b
-        self.tableWidget.setRowCount(c)
-        for i in range(1,23):
-            if i < 10:
-                for j in data["0" + str(i)]:
-                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j["nama"]))
-                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
-                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j["prodi"]))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j["skor"])))
-                    row += 1
-            else:
-                for j in data[str(i)]:
-                    self.tableWidget.setItem(row, 0, QTableWidgetItem(j['nama']))
-                    self.tableWidget.setItem(row, 1, QTableWidgetItem(j["NIM"]))
-                    self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
-                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j['skor'])))
-                    row += 1
-
     def loginguest(self):
         self.stackedWidget.setCurrentIndex(1)
     
@@ -160,6 +131,19 @@ class Window(QWidget):
                         self.nama_g.setText(data["nama"])
                         self.nim_g.setText(data["NIM"])
                         self.prodi_g.setText(data["prodi"])
+                    else:
+                        msg = QMessageBox()
+                        msg.setText("NIM tidak terdaftar")
+                        msg.setWindowTitle("Ooops...")
+                        msg.exec_()
+            
+            elif role == "user":
+                    nim = self.leditSearchNIM_6.text()
+                    data = tesdb.get_data_by_nim(nim)
+                    if data:
+                        self.nama_g.setText(data["nama"])
+                        self.nim_g.setText(data["NIM"])
+                        self.prodi_g.setText(data["prodi"])
                         self.skor_g.setText(str(data["skor"]))  
                     else:
                         msg = QMessageBox()
@@ -168,7 +152,7 @@ class Window(QWidget):
                         msg.exec_()
         except IndexError:
                         msg = QMessageBox()
-                        msg.setText("Namanya mana oi")
+                        msg.setText("Masukkan NIM")
                         msg.setWindowTitle("Ooops...")
                         msg.exec_()
         
@@ -179,8 +163,6 @@ class Window(QWidget):
         rules = cb.load_rules()
         for rule in rules:
             self.ComboBox.addItem(rule["kesalahan"])
-
-        # if self.update_skor.clicked:
 
     def skoring(self, selected):
         file2 = open("rule1.json", "r")
@@ -204,34 +186,28 @@ class Window(QWidget):
             skor1 = data_m["skor"]
             skor_up = skor1 - poin
             print(skor_up)
-            for mhs in data[prodi]:
-                if mhs["NIM"] == nim:
-                    mhs["skor"] = skor_up
+
+            msg = QMessageBox()
+            msg.setText("APAKAH")
+            msg.setWindowTitle("wett")
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+
+            returnValue = msg.exec()
+            if returnValue == QMessageBox.Ok:
+
+                for mhs in data[prodi]:
+                    if mhs["NIM"] == nim:
+                        mhs["skor"] = skor_up
 
             with open('db.json', 'w') as file:
                 json.dump(data, file, indent=4)
             
         except IndexError:
                         msg = QMessageBox()
-                        msg.setText("Namanya mana oi")
+                        msg.setText("Masukkan NIM yang akan diubah terlebih dahulu")
                         msg.setWindowTitle("Ooops...")
                         msg.exec_()
-        # score = {"skor": skor_up}
-        # data_m1 = int(nim[6] + nim[7])
-        # data_m1 -= 1
-        # print (data_m1)
-        # "db.json"[prodi][data_m1].update(score)
-        # print (data[prodi][data_m1]["skor"])
-        
-        
-        # data_m["skor"] = score
-        # # data_m.pop("skor")
-        # # data_m["skor"] = score
-        # data_m1 = int(nim[6] + nim[7])
-        # data_m1 -= 1
-        # data[prodi][data_m1]["skor"] = skor_up
-        # data[prodi][data_m1].pop("skor")
-        # data[prodi][data_m1]["skor"] = score
+                        
         file.close()
         file2.close()
 
