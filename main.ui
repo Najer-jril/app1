@@ -19,9 +19,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
@@ -38,12 +35,91 @@
     </sizepolicy>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="mainpage">
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
+    <widget class="QWidget" name="widget_4" native="true">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>52</y>
+       <width>72</width>
+       <height>72</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>130</y>
+       <width>128</width>
+       <height>58</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>194</y>
+       <width>1297</width>
+       <height>16</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>210</y>
+       <width>158</width>
+       <height>104</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
     <widget class="PushButton" name="btn_guest">
      <property name="geometry">
       <rect>
@@ -153,6 +229,10 @@
      </property>
     </widget>
     <zorder>bg</zorder>
+    <zorder>widget_4</zorder>
+    <zorder>widget_2</zorder>
+    <zorder>widget</zorder>
+    <zorder>widget_3</zorder>
     <zorder>btn_guest</zorder>
     <zorder>btn_login</zorder>
     <zorder>ledit_username</zorder>
@@ -650,8 +730,8 @@ PillToolButton:disabled:checked {
     <widget class="ImageLabel" name="ava">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>250</y>
+       <x>465</x>
+       <y>260</y>
        <width>72</width>
        <height>72</height>
       </rect>
@@ -793,7 +873,7 @@ PillToolButton:disabled:checked {
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectItems</enum>
+      <enum>QAbstractItemView::SelectRows</enum>
      </property>
      <property name="showGrid">
       <bool>true</bool>
@@ -802,7 +882,7 @@ PillToolButton:disabled:checked {
       <bool>true</bool>
      </property>
      <property name="rowCount">
-      <number>10</number>
+      <number>0</number>
      </property>
      <attribute name="horizontalHeaderCascadingSectionResizes">
       <bool>false</bool>
@@ -819,16 +899,6 @@ PillToolButton:disabled:checked {
      <attribute name="verticalHeaderDefaultSectionSize">
       <number>30</number>
      </attribute>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
      <column>
       <property name="text">
        <string>Nama</string>
