@@ -22,10 +22,10 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1333</width>
-     <height>650</height>
+     <x>9</x>
+     <y>9</y>
+     <width>1315</width>
+     <height>632</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -35,7 +35,7 @@
     </sizepolicy>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="mainpage">
     <widget class="QWidget" name="widget_4" native="true">
@@ -1199,6 +1199,19 @@ ComboBox:disabled {
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>70</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+    </widget>
     <zorder>admbg</zorder>
     <zorder>PushButton_4</zorder>
     <zorder>prodi_a</zorder>
@@ -1215,6 +1228,7 @@ ComboBox:disabled {
     <zorder>btn_logout3</zorder>
     <zorder>Ledit_NIM</zorder>
     <zorder>SubtitleLabel_2</zorder>
+    <zorder>pushButton</zorder>
    </widget>
   </widget>
  </widget>
