@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1333</width>
+    <width>1391</width>
     <height>650</height>
    </rect>
   </property>
@@ -35,7 +35,7 @@
     </sizepolicy>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="mainpage">
     <widget class="QWidget" name="widget_4" native="true">
@@ -869,6 +869,9 @@ PillToolButton:disabled:checked {
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
@@ -876,10 +879,13 @@ PillToolButton:disabled:checked {
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
      <property name="showGrid">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
      </property>
      <property name="rowCount">
       <number>0</number>
@@ -898,6 +904,9 @@ PillToolButton:disabled:checked {
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
       <number>30</number>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
      </attribute>
      <column>
       <property name="text">
@@ -1190,6 +1199,19 @@ ComboBox:disabled {
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>70</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+    </widget>
     <zorder>admbg</zorder>
     <zorder>PushButton_4</zorder>
     <zorder>prodi_a</zorder>
@@ -1206,6 +1228,7 @@ ComboBox:disabled {
     <zorder>btn_logout3</zorder>
     <zorder>Ledit_NIM</zorder>
     <zorder>SubtitleLabel_2</zorder>
+    <zorder>pushButton</zorder>
    </widget>
   </widget>
  </widget>
