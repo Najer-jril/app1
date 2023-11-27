@@ -220,9 +220,10 @@ class Window(QWidget):
             with open('db.json', 'w') as file:
                 json.dump(data, file, indent=4)
 
-                
-
-            
+            if returnValue == QMessageBox.Cancel:
+                self.stackedWidget.setCurrentIndex(3)
+                 
+                    
         except IndexError:
                         msg = QMessageBox()
                         msg.setText("Masukkan NIM yang akan diubah terlebih dahulu")
