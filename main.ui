@@ -25,7 +25,7 @@
      <x>9</x>
      <y>9</y>
      <width>1315</width>
-     <height>650</height>
+     <height>632</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -1199,7 +1199,7 @@ ComboBox:disabled {
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="refresh_btn">
      <property name="geometry">
       <rect>
        <x>930</x>
@@ -1228,7 +1228,7 @@ ComboBox:disabled {
     <zorder>btn_logout3</zorder>
     <zorder>Ledit_NIM</zorder>
     <zorder>SubtitleLabel_2</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>refresh_btn</zorder>
    </widget>
   </widget>
  </widget>
