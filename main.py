@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem
 from PyQt5.uic import loadUi
 from qfluentwidgets import *
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtCore import Qt
 import validasi
 import tesdb
 import cb
@@ -39,6 +40,7 @@ class Window(QWidget):
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
+        self.PushButton_12.clicked.connect(lambda: self.searchtable())
         # self.PushButton_4.clicked.connect(lambda: self.skoring())
         self.stackedWidget.setCurrentIndex(3)
         self.btn_guest.clicked.connect(self.loginguest)
@@ -54,6 +56,7 @@ class Window(QWidget):
         self.update_skor.clicked.connect(lambda: self.skoring(self.ComboBox.currentText()))
         
     def tabledata(self):
+        self.tableWidget.setSortingEnabled(False)
         file = open("db.json", "r")
         data = json.load(file)
         row = 0
@@ -81,6 +84,8 @@ class Window(QWidget):
                     self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
                     self.tableWidget.setItem(row, 3, QTableWidgetItem(str(j['skor'])))
                     row += 1
+        self.tableWidget.setSortingEnabled(True)
+        file.close()
 
     def login(self):
         username = self.ledit_username.text()
@@ -155,7 +160,18 @@ class Window(QWidget):
                         msg.setText("Masukkan NIM")
                         msg.setWindowTitle("Ooops...")
                         msg.exec_()
-        
+    
+    def searchtable(self):
+        s = self.leditSearchNIM_6.text()
+        data = tesdb.get_data_by_nim(s)
+        items = self.tableWidget.findItems(data["nama"], Qt.MatchContains)
+        try:
+            if items:  # we have found something
+                item = items[0]  # take the first
+                self.tableWidget.setCurrentItem(item)
+        except:
+             print("gagal")
+   
     def logout(self):
         self.stackedWidget.setCurrentIndex(0)
 
