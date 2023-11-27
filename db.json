@@ -334,7 +334,7 @@
             "nama": "Muhamad Faisal",
             "NIM": "11231045",
             "prodi": "Informatika",
-            "skor": 80,
+            "skor": 40,
             "role": "user"
         },
         {
@@ -348,14 +348,14 @@
             "nama": "Muhammad 'Aaqil Saputra",
             "NIM": "11231047",
             "prodi": "Informatika",
-            "skor": 0,
+            "skor": -5,
             "role": "user"
         },
         {
             "nama": "Muhammad Abdurrachim",
             "NIM": "11231048",
             "prodi": "Informatika",
-            "skor": 100,
+            "skor": 95,
             "role": "user"
         },
         {

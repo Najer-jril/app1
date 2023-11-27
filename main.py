@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
 from PyQt5 import QtGui
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem
@@ -46,6 +47,7 @@ class Window(QWidget):
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
+        self.refresh_btn.clicked.connect(self.refresh)
         self.tableWidget.setColumnWidth(0, 540)
         self.tableWidget.setColumnWidth(1, 200)
         self.tableWidget.setColumnWidth(2, 355)
@@ -238,6 +240,11 @@ class Window(QWidget):
         file.close()
         file2.close()
 
+    def refresh(self):
+        python = sys.executable
+        os.execl(python, python, * sys.argv)
+
+         
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
