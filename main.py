@@ -192,6 +192,7 @@ class Window(QWidget):
         file = open("db.json", "r")
         data = json.load(file)
         nim = self.Ledit_NIM.text()
+
         try:
             prodi = nim[0] + nim[1]
             for i in data[prodi]:
@@ -200,22 +201,23 @@ class Window(QWidget):
                     print (data_m)
 
             rules = data2["rule"]
-            for j in rules:
-                if selected == j["kesalahan"]:
-                    print (j)
-                    poin = 0
-                    poin += int(j['poin'])
-            skor1 = data_m["skor"]
-            skor_up = skor1 - poin
-            print(skor_up)
 
             msg = QMessageBox()
             msg.setText("APAKAH")
             msg.setWindowTitle("wett")
             msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-
             returnValue = msg.exec()
+
             if returnValue == QMessageBox.Ok:
+                 
+                for j in rules:
+                    if selected == j["kesalahan"]:
+                        print (j)
+                        poin = 0
+                        poin += int(j['poin'])
+                skor1 = data_m["skor"]
+                skor_up = skor1 - poin
+                print(skor_up)
 
                 for mhs in data[prodi]:
                     if mhs["NIM"] == nim:
@@ -223,13 +225,16 @@ class Window(QWidget):
 
             with open('db.json', 'w') as file:
                 json.dump(data, file, indent=4)
+
+                
+
             
         except IndexError:
                         msg = QMessageBox()
                         msg.setText("Masukkan NIM yang akan diubah terlebih dahulu")
                         msg.setWindowTitle("Ooops...")
                         msg.exec_()
-                        
+                            
         file.close()
         file2.close()
 
