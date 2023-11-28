@@ -22,7 +22,7 @@ class Ui_Form(object):
         Form.setSizePolicy(sizePolicy)
         Form.setStyleSheet("")
         self.stackedWidget = QtWidgets.QStackedWidget(Form)
-        self.stackedWidget.setGeometry(QtCore.QRect(9, 9, 1315, 632))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1333, 650))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Ignored)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -33,32 +33,39 @@ class Ui_Form(object):
         self.mainpage.setStyleSheet("")
         self.mainpage.setObjectName("mainpage")
         self.btn_guest = PushButton(self.mainpage)
-        self.btn_guest.setGeometry(QtCore.QRect(867, 430, 350, 32))
+        self.btn_guest.setGeometry(QtCore.QRect(491, 465, 350, 32))
+        self.btn_guest.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_guest.setObjectName("btn_guest")
         self.btn_login = PrimaryPushButton(self.mainpage)
-        self.btn_login.setGeometry(QtCore.QRect(867, 500, 350, 32))
+        self.btn_login.setGeometry(QtCore.QRect(491, 520, 350, 32))
+        self.btn_login.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_login.setObjectName("btn_login")
         self.bg = ImageLabel(self.mainpage)
         self.bg.setGeometry(QtCore.QRect(0, 0, 72, 72))
         self.bg.setObjectName("bg")
         self.ledit_username = LineEdit(self.mainpage)
-        self.ledit_username.setGeometry(QtCore.QRect(867, 280, 350, 33))
+        self.ledit_username.setGeometry(QtCore.QRect(491, 340, 350, 33))
         self.ledit_username.setObjectName("ledit_username")
         self.ledit_pw = PasswordLineEdit(self.mainpage)
-        self.ledit_pw.setGeometry(QtCore.QRect(867, 360, 350, 33))
+        self.ledit_pw.setGeometry(QtCore.QRect(491, 410, 350, 33))
         self.ledit_pw.setObjectName("ledit_pw")
         self.BodyLabel = BodyLabel(self.mainpage)
-        self.BodyLabel.setGeometry(QtCore.QRect(867, 257, 71, 21))
+        self.BodyLabel.setGeometry(QtCore.QRect(631, 310, 71, 21))
+        self.BodyLabel.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel.setProperty("pixelFontSize", 16)
         self.BodyLabel.setObjectName("BodyLabel")
         self.BodyLabel_2 = BodyLabel(self.mainpage)
-        self.BodyLabel_2.setGeometry(QtCore.QRect(870, 330, 61, 21))
+        self.BodyLabel_2.setGeometry(QtCore.QRect(630, 380, 71, 21))
+        self.BodyLabel_2.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_2.setProperty("pixelFontSize", 16)
         self.BodyLabel_2.setObjectName("BodyLabel_2")
         self.DisplayLabel = DisplayLabel(self.mainpage)
         self.DisplayLabel.setGeometry(QtCore.QRect(830, 50, 392, 90))
         self.DisplayLabel.setText("")
         self.DisplayLabel.setObjectName("DisplayLabel")
         self.LargeTitleLabel = LargeTitleLabel(self.mainpage)
-        self.LargeTitleLabel.setGeometry(QtCore.QRect(867, 100, 867, 53))
+        self.LargeTitleLabel.setGeometry(QtCore.QRect(605, 235, 121, 53))
+        self.LargeTitleLabel.setProperty("lightColor", QtGui.QColor(255, 255, 255))
         self.LargeTitleLabel.setObjectName("LargeTitleLabel")
         self.bg.raise_()
         self.btn_guest.raise_()
@@ -74,24 +81,328 @@ class Ui_Form(object):
         self.guestpage.setObjectName("guestpage")
         self.TitleLabel_2 = TitleLabel(self.guestpage)
         self.TitleLabel_2.setGeometry(QtCore.QRect(622, 80, 90, 31))
+        self.TitleLabel_2.setProperty("lightColor", QtGui.QColor(255, 255, 255))
         self.TitleLabel_2.setObjectName("TitleLabel_2")
         self.Ledit_NIM_g = QtWidgets.QLineEdit(self.guestpage)
         self.Ledit_NIM_g.setGeometry(QtCore.QRect(542, 170, 250, 22))
         self.Ledit_NIM_g.setObjectName("Ledit_NIM_g")
         self.PushButton_2 = PushButton(self.guestpage)
         self.PushButton_2.setGeometry(QtCore.QRect(592, 210, 150, 32))
+        self.PushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.PushButton_2.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 10px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.PushButton_2.setObjectName("PushButton_2")
         self.SubtitleLabel = SubtitleLabel(self.guestpage)
-        self.SubtitleLabel.setGeometry(QtCore.QRect(470, 165, 41, 27))
+        self.SubtitleLabel.setGeometry(QtCore.QRect(410, 165, 101, 27))
+        self.SubtitleLabel.setProperty("lightColor", QtGui.QColor(255, 255, 255))
         self.SubtitleLabel.setObjectName("SubtitleLabel")
         self.btn_logout2 = PushButton(self.guestpage)
         self.btn_logout2.setGeometry(QtCore.QRect(1170, 20, 120, 35))
+        self.btn_logout2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_logout2.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
-"    color: black;\n"
-"    background: rgb(131, 23, 255);\n"
+"    color: black; \n"
+"    background-color: rgb(255, 255, 255);\n"
 "    border: 1px solid rgba(0, 0, 0, 0.073);\n"
 "    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
-"    border-radius: 5px;\n"
+"    border-radius: 10px;\n"
 "    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
 "    padding: 5px 12px 6px 12px;\n"
 "    outline: none;\n"
@@ -389,35 +700,38 @@ class Ui_Form(object):
         self.btn_logout2.setIconSize(QtCore.QSize(10, 10))
         self.btn_logout2.setObjectName("btn_logout2")
         self.BodyLabel_3 = BodyLabel(self.guestpage)
-        self.BodyLabel_3.setGeometry(QtCore.QRect(600, 260, 40, 19))
+        self.BodyLabel_3.setGeometry(QtCore.QRect(540, 260, 51, 20))
+        self.BodyLabel_3.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_3.setProperty("pixelFontSize", 16)
         self.BodyLabel_3.setObjectName("BodyLabel_3")
         self.BodyLabel_4 = BodyLabel(self.guestpage)
-        self.BodyLabel_4.setGeometry(QtCore.QRect(600, 295, 40, 19))
+        self.BodyLabel_4.setGeometry(QtCore.QRect(540, 300, 51, 20))
+        self.BodyLabel_4.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_4.setProperty("pixelFontSize", 16)
         self.BodyLabel_4.setObjectName("BodyLabel_4")
         self.BodyLabel_5 = BodyLabel(self.guestpage)
-        self.BodyLabel_5.setGeometry(QtCore.QRect(600, 330, 40, 19))
+        self.BodyLabel_5.setGeometry(QtCore.QRect(540, 340, 41, 20))
+        self.BodyLabel_5.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_5.setProperty("pixelFontSize", 16)
         self.BodyLabel_5.setObjectName("BodyLabel_5")
-        self.BodyLabel_6 = BodyLabel(self.guestpage)
-        self.BodyLabel_6.setGeometry(QtCore.QRect(600, 365, 40, 19))
-        self.BodyLabel_6.setObjectName("BodyLabel_6")
         self.nama_g = BodyLabel(self.guestpage)
         self.nama_g.setGeometry(QtCore.QRect(670, 260, 471, 19))
+        self.nama_g.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.nama_g.setProperty("pixelFontSize", 16)
         self.nama_g.setObjectName("nama_g")
         self.prodi_g = BodyLabel(self.guestpage)
-        self.prodi_g.setGeometry(QtCore.QRect(670, 295, 471, 19))
+        self.prodi_g.setGeometry(QtCore.QRect(670, 300, 471, 19))
+        self.prodi_g.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.prodi_g.setProperty("pixelFontSize", 16)
         self.prodi_g.setObjectName("prodi_g")
         self.nim_g = BodyLabel(self.guestpage)
-        self.nim_g.setGeometry(QtCore.QRect(670, 330, 471, 19))
+        self.nim_g.setGeometry(QtCore.QRect(670, 340, 471, 19))
+        self.nim_g.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.nim_g.setProperty("pixelFontSize", 16)
         self.nim_g.setObjectName("nim_g")
-        self.skor_g = BodyLabel(self.guestpage)
-        self.skor_g.setGeometry(QtCore.QRect(670, 365, 471, 19))
-        self.skor_g.setObjectName("skor_g")
         self.Gu = ImageLabel(self.guestpage)
         self.Gu.setGeometry(QtCore.QRect(0, 0, 72, 72))
         self.Gu.setObjectName("Gu")
-        self.ava = ImageLabel(self.guestpage)
-        self.ava.setGeometry(QtCore.QRect(420, 250, 72, 72))
-        self.ava.setObjectName("ava")
         self.Gu.raise_()
         self.TitleLabel_2.raise_()
         self.Ledit_NIM_g.raise_()
@@ -427,46 +741,482 @@ class Ui_Form(object):
         self.BodyLabel_3.raise_()
         self.BodyLabel_4.raise_()
         self.BodyLabel_5.raise_()
-        self.BodyLabel_6.raise_()
         self.nama_g.raise_()
         self.prodi_g.raise_()
         self.nim_g.raise_()
-        self.skor_g.raise_()
-        self.ava.raise_()
         self.stackedWidget.addWidget(self.guestpage)
         self.userpage = QtWidgets.QWidget()
         self.userpage.setObjectName("userpage")
         self.PushButton_12 = PushButton(self.userpage)
-        self.PushButton_12.setGeometry(QtCore.QRect(592, 130, 150, 30))
+        self.PushButton_12.setGeometry(QtCore.QRect(606, 130, 120, 30))
+        self.PushButton_12.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.PushButton_12.setObjectName("PushButton_12")
         self.btn_logout = PushButton(self.userpage)
         self.btn_logout.setGeometry(QtCore.QRect(1170, 20, 120, 35))
+        self.btn_logout.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_logout.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 10px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.btn_logout.setIconSize(QtCore.QSize(10, 10))
         self.btn_logout.setObjectName("btn_logout")
         self.leditSearchNIM_6 = QtWidgets.QLineEdit(self.userpage)
-        self.leditSearchNIM_6.setGeometry(QtCore.QRect(542, 100, 250, 22))
+        self.leditSearchNIM_6.setGeometry(QtCore.QRect(516, 95, 300, 30))
+        self.leditSearchNIM_6.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.leditSearchNIM_6.setStyleSheet("border-radius: 10px;\n"
+"")
+        self.leditSearchNIM_6.setText("")
         self.leditSearchNIM_6.setObjectName("leditSearchNIM_6")
         self.user_nama = TitleLabel(self.userpage)
-        self.user_nama.setGeometry(QtCore.QRect(320, 60, 591, 31))
+        self.user_nama.setGeometry(QtCore.QRect(230, 30, 641, 61))
+        self.user_nama.setProperty("lightColor", QtGui.QColor(255, 255, 255))
         self.user_nama.setObjectName("user_nama")
         self.user_prodi = BodyLabel(self.userpage)
-        self.user_prodi.setGeometry(QtCore.QRect(320, 120, 221, 19))
+        self.user_prodi.setGeometry(QtCore.QRect(230, 120, 281, 31))
+        self.user_prodi.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.user_prodi.setProperty("pixelFontSize", 20)
         self.user_prodi.setObjectName("user_prodi")
         self.user_skor = BodyLabel(self.userpage)
-        self.user_skor.setGeometry(QtCore.QRect(320, 140, 63, 19))
+        self.user_skor.setGeometry(QtCore.QRect(230, 160, 161, 21))
+        self.user_skor.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.user_skor.setProperty("pixelFontSize", 20)
         self.user_skor.setObjectName("user_skor")
         self.user_nim = BodyLabel(self.userpage)
-        self.user_nim.setGeometry(QtCore.QRect(320, 100, 63, 19))
+        self.user_nim.setGeometry(QtCore.QRect(230, 90, 121, 21))
+        self.user_nim.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.user_nim.setProperty("pixelFontSize", 20)
         self.user_nim.setObjectName("user_nim")
         self.tableWidget = TableWidget(self.userpage)
-        self.tableWidget.setGeometry(QtCore.QRect(316, 250, 700, 250))
+        self.tableWidget.setGeometry(QtCore.QRect(316, 250, 700, 261))
         self.tableWidget.setMouseTracking(True)
         self.tableWidget.setAutoFillBackground(False)
+        self.tableWidget.setStyleSheet("QTableView {\n"
+"    outline: none;\n"
+"    background-color: rgb(147, 177, 166);\n"
+"    border: none;\n"
+"    /* font: 13px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    selection-background-color: transparent;\n"
+"    alternate-background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    background: transparent;\n"
+"    border: 0px;\n"
+"    padding-left: 16px;\n"
+"    padding-right: 16px;\n"
+"    height: 35px;\n"
+"}\n"
+"\n"
+"\n"
+"QTableView::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 5px;\n"
+"    border: 1px solid rgba(0, 0, 0, 0.48);\n"
+"    background-color: rgba(0, 0, 0, 0.022);\n"
+"}\n"
+"\n"
+"QTableView::indicator:hover {\n"
+"    border: 1px solid rgba(0, 0, 0, 0.56);\n"
+"    background-color: rgba(0, 0, 0, 0.05);\n"
+"}\n"
+"\n"
+"QTableView::indicator:pressed {\n"
+"    border: 1px solid rgba(0, 0, 0, 0.27);\n"
+"    background-color: rgba(0, 0, 0, 0.12);\n"
+"}\n"
+"\n"
+"QTableView::indicator:checked,\n"
+"QTableView::indicator:indeterminate {\n"
+"    border: 1px solid #009faa;\n"
+"    background-color: #009faa;\n"
+"}\n"
+"\n"
+"QTableView::indicator:checked {\n"
+"    image: url(:/qfluentwidgets/images/check_box/Accept_white.svg);\n"
+"}\n"
+"\n"
+"QTableView::indicator:indeterminate {\n"
+"    image: url(:/qfluentwidgets/images/check_box/PartialAccept_white.svg);\n"
+"}\n"
+"\n"
+"QTableView::indicator:checked:hover,\n"
+"QTableView::indicator:indeterminate:hover {\n"
+"    border: 1px solid #00a7b3;\n"
+"    background-color: #00a7b3;\n"
+"}\n"
+"\n"
+"QTableView::indicator:checked:pressed,\n"
+"QTableView::indicator:indeterminate:pressed {\n"
+"    border: 1px solid #3eabb3;\n"
+"    background-color: #3eabb3;\n"
+"}\n"
+"\n"
+"QTableView::indicator:disabled {\n"
+"    border: 1px solid rgba(0, 0, 0, 0.27);\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView::indicator:checked:disabled,\n"
+"QTableView::indicator:indeterminate:disabled {\n"
+"    border: 1px solid rgb(199, 199, 199);\n"
+"    background-color: rgb(199, 199, 199);\n"
+"}\n"
+"\n"
+"\n"
+"QHeaderView {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: transparent;\n"
+"    color: black;\n"
+"    padding-left: 5px;\n"
+"    padding-right: 5px;\n"
+"    border: 1px solid rgba(0, 0, 0, 19);\n"
+"    font: 13px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 7);\n"
+"    border-left: none;\n"
+"    height: 40px;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal:last {\n"
+"    border-right: none;\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical {\n"
+"    border-top: none;\n"
+"}\n"
+"\n"
+"QHeaderView::section:checked {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QHeaderView::down-arrow {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: center right;\n"
+"    margin-right: 6px;\n"
+"    image: url(:/qfluentwidgets/images/table_view/Down_black.svg);\n"
+"}\n"
+"\n"
+"QHeaderView::up-arrow {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: center right;\n"
+"    margin-right: 6px;\n"
+"    image: url(:/qfluentwidgets/images/table_view/Up_black.svg);\n"
+"}\n"
+"QTableCornerButton::section {\n"
+"    background-color: transparent;\n"
+"    border: 1px solid rgba(0, 0, 0, 19);\n"
+"}\n"
+"\n"
+"QTableCornerButton::section:pressed {\n"
+"    background-color: rgba(0, 0, 0, 12);\n"
+"}")
         self.tableWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectItems)
         self.tableWidget.setShowGrid(True)
-        self.tableWidget.setRowCount(0)
+        self.tableWidget.setRowCount(10)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(4)
         item = QtWidgets.QTableWidgetItem()
@@ -498,37 +1248,56 @@ class Ui_Form(object):
         self.adminpage_3 = QtWidgets.QWidget()
         self.adminpage_3.setObjectName("adminpage_3")
         self.PushButton_4 = PushButton(self.adminpage_3)
-        self.PushButton_4.setGeometry(QtCore.QRect(616, 125, 100, 30))
+        self.PushButton_4.setGeometry(QtCore.QRect(606, 140, 120, 30))
+        self.PushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.PushButton_4.setObjectName("PushButton_4")
         self.prodi_a = BodyLabel(self.adminpage_3)
-        self.prodi_a.setGeometry(QtCore.QRect(500, 240, 411, 21))
+        self.prodi_a.setGeometry(QtCore.QRect(500, 270, 541, 21))
+        self.prodi_a.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.prodi_a.setProperty("pixelFontSize", 16)
         self.prodi_a.setObjectName("prodi_a")
         self.nama_a = BodyLabel(self.adminpage_3)
-        self.nama_a.setGeometry(QtCore.QRect(500, 180, 411, 21))
+        self.nama_a.setGeometry(QtCore.QRect(500, 190, 541, 21))
+        self.nama_a.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.nama_a.setProperty("pixelFontSize", 16)
         self.nama_a.setObjectName("nama_a")
         self.BodyLabel_9 = BodyLabel(self.adminpage_3)
-        self.BodyLabel_9.setGeometry(QtCore.QRect(420, 270, 34, 19))
+        self.BodyLabel_9.setGeometry(QtCore.QRect(413, 310, 41, 20))
+        self.BodyLabel_9.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_9.setProperty("pixelFontSize", 16)
         self.BodyLabel_9.setObjectName("BodyLabel_9")
         self.BodyLabel_15 = BodyLabel(self.adminpage_3)
-        self.BodyLabel_15.setGeometry(QtCore.QRect(420, 240, 34, 19))
+        self.BodyLabel_15.setGeometry(QtCore.QRect(413, 270, 51, 20))
+        self.BodyLabel_15.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_15.setProperty("pixelFontSize", 16)
         self.BodyLabel_15.setObjectName("BodyLabel_15")
         self.BodyLabel_16 = BodyLabel(self.adminpage_3)
-        self.BodyLabel_16.setGeometry(QtCore.QRect(420, 210, 34, 19))
+        self.BodyLabel_16.setGeometry(QtCore.QRect(413, 230, 41, 20))
+        self.BodyLabel_16.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_16.setProperty("pixelFontSize", 16)
         self.BodyLabel_16.setObjectName("BodyLabel_16")
         self.skor_a = BodyLabel(self.adminpage_3)
-        self.skor_a.setGeometry(QtCore.QRect(500, 270, 411, 21))
+        self.skor_a.setGeometry(QtCore.QRect(500, 310, 411, 21))
+        self.skor_a.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.skor_a.setProperty("pixelFontSize", 16)
         self.skor_a.setObjectName("skor_a")
         self.nim_a = BodyLabel(self.adminpage_3)
-        self.nim_a.setGeometry(QtCore.QRect(500, 210, 411, 21))
+        self.nim_a.setGeometry(QtCore.QRect(500, 230, 411, 21))
+        self.nim_a.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.nim_a.setProperty("pixelFontSize", 16)
         self.nim_a.setObjectName("nim_a")
         self.BodyLabel_17 = BodyLabel(self.adminpage_3)
-        self.BodyLabel_17.setGeometry(QtCore.QRect(420, 180, 35, 19))
+        self.BodyLabel_17.setGeometry(QtCore.QRect(414, 190, 51, 20))
+        self.BodyLabel_17.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.BodyLabel_17.setProperty("pixelFontSize", 16)
         self.BodyLabel_17.setObjectName("BodyLabel_17")
         self.SubtitleLabel_4 = SubtitleLabel(self.adminpage_3)
-        self.SubtitleLabel_4.setGeometry(QtCore.QRect(631, 10, 71, 27))
+        self.SubtitleLabel_4.setGeometry(QtCore.QRect(615, 10, 101, 27))
+        self.SubtitleLabel_4.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.SubtitleLabel_4.setProperty("pixelFontSize", 30)
         self.SubtitleLabel_4.setObjectName("SubtitleLabel_4")
         self.ComboBox = ComboBox(self.adminpage_3)
-        self.ComboBox.setGeometry(QtCore.QRect(416, 360, 500, 32))
+        self.ComboBox.setGeometry(QtCore.QRect(416, 400, 500, 32))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -567,17 +1336,321 @@ class Ui_Form(object):
 "")
         self.ComboBox.setObjectName("ComboBox")
         self.update_skor = PushButton(self.adminpage_3)
-        self.update_skor.setGeometry(QtCore.QRect(616, 400, 100, 32))
+        self.update_skor.setGeometry(QtCore.QRect(606, 450, 120, 32))
+        self.update_skor.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.update_skor.setObjectName("update_skor")
         self.btn_logout3 = PushButton(self.adminpage_3)
         self.btn_logout3.setGeometry(QtCore.QRect(1170, 20, 120, 35))
+        self.btn_logout3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_logout3.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 10px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
         self.btn_logout3.setIconSize(QtCore.QSize(10, 10))
         self.btn_logout3.setObjectName("btn_logout3")
         self.Ledit_NIM = LineEdit(self.adminpage_3)
-        self.Ledit_NIM.setGeometry(QtCore.QRect(416, 75, 500, 33))
+        self.Ledit_NIM.setGeometry(QtCore.QRect(416, 90, 500, 33))
         self.Ledit_NIM.setObjectName("Ledit_NIM")
         self.SubtitleLabel_2 = SubtitleLabel(self.adminpage_3)
-        self.SubtitleLabel_2.setGeometry(QtCore.QRect(420, 40, 119, 27))
+        self.SubtitleLabel_2.setGeometry(QtCore.QRect(420, 55, 119, 27))
+        self.SubtitleLabel_2.setProperty("lightColor", QtGui.QColor(255, 255, 255))
+        self.SubtitleLabel_2.setProperty("pixelFontSize", 25)
         self.SubtitleLabel_2.setObjectName("SubtitleLabel_2")
         self.admbg = ImageLabel(self.adminpage_3)
         self.admbg.setGeometry(QtCore.QRect(0, 0, 72, 72))
@@ -601,7 +1674,7 @@ class Ui_Form(object):
         self.stackedWidget.addWidget(self.adminpage_3)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -614,19 +1687,16 @@ class Ui_Form(object):
         self.LargeTitleLabel.setText(_translate("Form", "LOGIN"))
         self.TitleLabel_2.setText(_translate("Form", "GUEST"))
         self.PushButton_2.setText(_translate("Form", "search"))
-        self.SubtitleLabel.setText(_translate("Form", "data"))
+        self.SubtitleLabel.setText(_translate("Form", "CARI DATA"))
         self.btn_logout2.setText(_translate("Form", "Logout"))
-        self.BodyLabel_3.setText(_translate("Form", "nama"))
-        self.BodyLabel_4.setText(_translate("Form", "prodi"))
+        self.BodyLabel_3.setText(_translate("Form", "NAMA"))
+        self.BodyLabel_4.setText(_translate("Form", "PRODI"))
         self.BodyLabel_5.setText(_translate("Form", "NIM"))
-        self.BodyLabel_6.setText(_translate("Form", "skor"))
-        self.nama_g.setText(_translate("Form", "data"))
-        self.prodi_g.setText(_translate("Form", "data"))
-        self.nim_g.setText(_translate("Form", "data"))
-        self.skor_g.setText(_translate("Form", "data"))
+        self.nama_g.setText(_translate("Form", "-"))
+        self.prodi_g.setText(_translate("Form", "-"))
+        self.nim_g.setText(_translate("Form", "-"))
         self.PushButton_12.setText(_translate("Form", "Search"))
         self.btn_logout.setText(_translate("Form", "Logout"))
-        self.leditSearchNIM_6.setText(_translate("Form", "Cari NIM"))
         self.user_nama.setText(_translate("Form", "Nama"))
         self.user_prodi.setText(_translate("Form", "prodi"))
         self.user_skor.setText(_translate("Form", "skor"))
@@ -641,16 +1711,26 @@ class Ui_Form(object):
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("Form", "Skor"))
         self.PushButton_4.setText(_translate("Form", "search"))
-        self.prodi_a.setText(_translate("Form", "tesdata"))
-        self.nama_a.setText(_translate("Form", "tesdata"))
-        self.BodyLabel_9.setText(_translate("Form", "skor"))
-        self.BodyLabel_15.setText(_translate("Form", "prodi"))
-        self.BodyLabel_16.setText(_translate("Form", "nim"))
-        self.skor_a.setText(_translate("Form", "tesdata"))
-        self.nim_a.setText(_translate("Form", "tesdata"))
-        self.BodyLabel_17.setText(_translate("Form", "nama"))
+        self.prodi_a.setText(_translate("Form", "-"))
+        self.nama_a.setText(_translate("Form", "-"))
+        self.BodyLabel_9.setText(_translate("Form", "SKOR"))
+        self.BodyLabel_15.setText(_translate("Form", "PRODI"))
+        self.BodyLabel_16.setText(_translate("Form", "NIM"))
+        self.skor_a.setText(_translate("Form", "-"))
+        self.nim_a.setText(_translate("Form", "-"))
+        self.BodyLabel_17.setText(_translate("Form", "NAMA"))
         self.SubtitleLabel_4.setText(_translate("Form", "ADMIN"))
         self.update_skor.setText(_translate("Form", "Update Skor"))
         self.btn_logout3.setText(_translate("Form", "Logout"))
         self.SubtitleLabel_2.setText(_translate("Form", "Cari NIM"))
 from qfluentwidgets import BodyLabel, ComboBox, DisplayLabel, ImageLabel, LargeTitleLabel, LineEdit, PasswordLineEdit, PrimaryPushButton, PushButton, SubtitleLabel, TableWidget, TitleLabel
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())

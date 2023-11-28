@@ -159,12 +159,12 @@ class Window(QWidget):
                         msg.exec_()
     
     def searchtable(self):
-        s = self.leditSearchNIM_6.text()
-        data = tesdb.get_data_by_nim(s)
-        items = self.tableWidget.findItems(data["nama"], Qt.MatchContains)
         try:
-            if items:  # we have found something
-                item = items[0]  # take the first
+            s = self.leditSearchNIM_6.text()
+            data = tesdb.get_data_by_nim(s)
+            items = self.tableWidget.findItems(data["nama"], Qt.MatchContains)
+            if items:  
+                item = items[0]  
                 self.tableWidget.setCurrentItem(item)
         except:
             msg = QMessageBox()
@@ -197,8 +197,8 @@ class Window(QWidget):
             rules = data2["rule"]
 
             msg = QMessageBox()
-            msg.setText("APAKAH")
-            msg.setWindowTitle("wett")
+            msg.setText("Apakah anda yakin?")
+            msg.setWindowTitle("KONFIRMASI")
             msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
             returnValue = msg.exec()
 

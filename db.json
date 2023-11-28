@@ -348,21 +348,21 @@
             "nama": "Muhammad 'Aaqil Saputra",
             "NIM": "11231047",
             "prodi": "Informatika",
-            "skor": -5,
+            "skor": 45,
             "role": "user"
         },
         {
             "nama": "Muhammad Abdurrachim",
             "NIM": "11231048",
             "prodi": "Informatika",
-            "skor": 95,
+            "skor": 100,
             "role": "user"
         },
         {
             "nama": "Muhammad Ainun Nasichin",
             "NIM": "11231049",
             "prodi": "Informatika",
-            "skor": 65,
+            "skor": 100,
             "role": "user"
         },
         {
@@ -404,14 +404,14 @@
             "nama": "Muhammad Fatwa Al Choiri",
             "NIM": "11231055",
             "prodi": "Informatika",
-            "skor": 80,
+            "skor": 100,
             "role": "user"
         },
         {
             "nama": "Muhammad Iqbal Alexandre Saputra",
             "NIM": "11231056",
             "prodi": "Informatika",
-            "skor": 25,
+            "skor": 50,
             "role": "user"
         },
         {
@@ -432,7 +432,7 @@
             "nama": "Muhammad Nazril Ilham",
             "NIM": "11231059",
             "prodi": "Informatika",
-            "skor": 0,
+            "skor": 95,
             "role": "user"
         },
         {
