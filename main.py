@@ -242,7 +242,9 @@ class Window(QWidget):
 
     def refresh(self):
         python = sys.executable
-        os.execl(python, python, * sys.argv)
+        os.execlp(python, python, "main.py", * sys.argv)
+        
+        
 
          
 if __name__ == "__main__":

@@ -25,10 +25,10 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>9</y>
-     <width>1315</width>
-     <height>632</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1333</width>
+     <height>650</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -712,9 +712,9 @@ PillToolButton:disabled:checked {
      <property name="geometry">
       <rect>
        <x>320</x>
-       <y>55</y>
+       <y>30</y>
        <width>641</width>
-       <height>31</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="text">
@@ -1109,7 +1109,7 @@ ComboBox:disabled {
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="refresh_btn">
      <property name="geometry">
       <rect>
        <x>930</x>
@@ -1138,7 +1138,7 @@ ComboBox:disabled {
     <zorder>btn_logout3</zorder>
     <zorder>Ledit_NIM</zorder>
     <zorder>SubtitleLabel_2</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>refresh_btn</zorder>
    </widget>
   </widget>
  </widget>
