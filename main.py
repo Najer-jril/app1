@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-
 import sys
-import os
 from PyQt5 import QtGui
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QApplication, QWidget, QTableWidgetItem
@@ -22,32 +19,27 @@ class Window(QWidget):
         self.setFixedSize(1333, 650)    
         self.setWindowTitle("OFFSCORE")
         self.setWindowIcon(QtGui.QIcon('OFFSCORE_LOGO.png'))
-
-        # self.labelbackground = BodyLabel(self)
-        # self.labelbackground.
         self.setFixedSize(1333, 650)
-        self.bg.setPixmap(QPixmap("OFF-SCORE.png"))
+        self.bg.setPixmap(QPixmap("LOGINOFF.png"))
 
         self.setFixedSize(1333, 650)
-        self.Gu.setPixmap(QPixmap("GUEST.png"))
+        self.Gu.setPixmap(QPixmap("LOGIN50.png"))
 
         self.setFixedSize(1333, 650)
-        self.admbg.setPixmap(QPixmap("ADMIN.png"))
+        self.admbg.setPixmap(QPixmap("LOGIN50.png"))
 
         self.setFixedSize(1333, 650)
-        self.usrbg.setPixmap(QPixmap("USER.png"))
+        self.usrbg.setPixmap(QPixmap("LOGIN50.png"))
 
         self.btn_login.clicked.connect(self.login)
         self.PushButton_2.clicked.connect(lambda: self.searchdata("guest"))
         self.PushButton_4.clicked.connect(lambda: self.searchdata("admin"))
         self.PushButton_12.clicked.connect(lambda: self.searchtable())
-        # self.PushButton_4.clicked.connect(lambda: self.skoring())
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         self.btn_guest.clicked.connect(self.loginguest)
         self.btn_logout.clicked.connect(self.logout)
         self.btn_logout2.clicked.connect(self.logout)
         self.btn_logout3.clicked.connect(self.logout)
-        self.refresh_btn.clicked.connect(self.refresh)
         self.tableWidget.setColumnWidth(0, 540)
         self.tableWidget.setColumnWidth(1, 200)
         self.tableWidget.setColumnWidth(2, 355)
@@ -93,7 +85,6 @@ class Window(QWidget):
             # self.tableWidget.sortItems(3, QtCore.Qt.AscendingOrder)
         self.tableWidget.setSortingEnabled(True)
         
-
     def login(self):
         username = self.ledit_username.text()
         password =self.ledit_pw.text()
@@ -135,7 +126,6 @@ class Window(QWidget):
                     msg.setWindowTitle("Ooops...")
                     msg.exec_()
            
-
             elif role == "guest":
                     nim = self.Ledit_NIM_g.text()
                     data = tesdb.get_data_by_nim(nim)
@@ -177,7 +167,10 @@ class Window(QWidget):
                 item = items[0]  # take the first
                 self.tableWidget.setCurrentItem(item)
         except:
-             print("gagal")
+            msg = QMessageBox()
+            msg.setText("NIM tidak terdaftar")
+            msg.setWindowTitle("Ooops...")
+            msg.exec_()
    
     def logout(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -240,12 +233,22 @@ class Window(QWidget):
         file.close()
         file2.close()
 
-    def refresh(self):
-        python = sys.executable
-        os.execlp(python, python, "main.py", * sys.argv)
-        
-        
+        self.refresh()
 
+    def refresh(self):
+        nim = self.Ledit_NIM.text()
+        data = tesdb.get_data_by_nim(nim)  
+        print(data)      
+        if data:
+            self.nama_a.setText(data["nama"])
+            self.nim_a.setText(data["NIM"])
+            self.prodi_a.setText(data["prodi"])
+            self.skor_a.setText(str(data["skor"]))
+        else:
+            msg = QMessageBox()
+            msg.setText("NIM tidak terdaftar")
+            msg.setWindowTitle("Ooops...")
+            msg.exec_()
          
 if __name__ == "__main__":
     app = QApplication(sys.argv)
