@@ -38,7 +38,7 @@
     </sizepolicy>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="mainpage">
     <property name="styleSheet">
@@ -2387,6 +2387,19 @@ PillToolButton:disabled:checked {
       </rect>
      </property>
     </widget>
+    <widget class="PushButton" name="undo_btn">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>400</y>
+       <width>100</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Undo</string>
+     </property>
+    </widget>
     <zorder>admbg</zorder>
     <zorder>PushButton_4</zorder>
     <zorder>prodi_a</zorder>
@@ -2403,6 +2416,7 @@ PillToolButton:disabled:checked {
     <zorder>btn_logout3</zorder>
     <zorder>Ledit_NIM</zorder>
     <zorder>SubtitleLabel_2</zorder>
+    <zorder>undo_btn</zorder>
    </widget>
   </widget>
  </widget>

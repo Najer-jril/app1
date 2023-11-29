@@ -45,7 +45,7 @@ class Window(QWidget):
         self.tabledata()
         self.combobox()
         self.update_skor.clicked.connect(lambda: self.skoring(self.ComboBox.currentText()))
-        # self.undo_btn.clicked.connect(lambda: self.undo(self.ComboBox.currentText()))
+        self.undo_btn.clicked.connect(lambda: self.undo(self.ComboBox.currentText()))
         
     def tabledata(self):
         self.tableWidget.setSortingEnabled(False)
