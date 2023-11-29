@@ -1,7 +1,5 @@
 import json
 
-
-
 def get_data_by_nim(nim):
     file = open("db.json", "r")
     data = json.load(file)

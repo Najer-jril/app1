@@ -14,6 +14,7 @@ class Window(QWidget):
     def __init__(self):
         super(Window, self).__init__()
         loadUi("main.ui", self)
+        # self.titleBar.raise_()
         self.setGeometry(20,50, 1333, 650)
         self.setFixedSize(1333, 650)    
         self.setWindowTitle("OFFSCORE")
@@ -21,7 +22,8 @@ class Window(QWidget):
         self.setFixedSize(1333, 650)
         self.bg.setPixmap(QPixmap("LOGINOFF.png"))
 
-         
+        self.setFixedSize(1333, 650)
+        self.Gu.setPixmap(QPixmap("LOGIN50.png"))
 
         self.setFixedSize(1333, 650)
         self.admbg.setPixmap(QPixmap("LOGIN50.png"))
@@ -80,6 +82,7 @@ class Window(QWidget):
                     self.tableWidget.setItem(row, 2, QTableWidgetItem(j['prodi']))
                     self.tableWidget.setItem(row, 3, item)
                     row += 1
+            # self.tableWidget.sortItems(3, QtCore.Qt.AscendingOrder)
         self.tableWidget.setSortingEnabled(True)
         
     def login(self):
@@ -89,6 +92,8 @@ class Window(QWidget):
             user_data = validasi.login(username, password)
             if user_data["role"] == "user":
                 self.stackedWidget.setCurrentIndex(2)
+                self.userpage.setProperty("user_data", user_data)
+                print(self.userpage.property("user_data"))
                 self.user_nama.setText(str(user_data["nama"]))
                 self.user_nim.setText(str(user_data["NIM"]))
                 self.user_skor.setText(str(user_data[str("skor")]))
@@ -224,7 +229,6 @@ class Window(QWidget):
             msg.setText("Masukkan NIM yang akan diubah terlebih dahulu")
             msg.setWindowTitle("Ooops...")
             msg.exec_()
-
                             
         file.close()
         file2.close()
@@ -233,18 +237,14 @@ class Window(QWidget):
 
     def refresh(self):
         nim = self.Ledit_NIM.text()
-        data = tesdb.get_data_by_nim(nim)  
-        if data:
-            self.nama_a.setText(data["nama"])
-            self.nim_a.setText(data["NIM"])
-            self.prodi_a.setText(data["prodi"])
-            self.skor_a.setText(str(data["skor"]))
-        else:
-            msg = QMessageBox()
-            msg.setText("NIM tidak terdaftar")
-            msg.setWindowTitle("Ooops...")
-            msg.exec_()
-         
+        data = tesdb.get_data_by_nim(nim)
+        # data = {nim: "11231059", nama: "muhammad najer", ...}
+        #   
+        self.nama_a.setText(data["nama"])
+        self.nim_a.setText(data["NIM"])
+        self.prodi_a.setText(data["prodi"])
+        self.skor_a.setText(str(data["skor"]))
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
