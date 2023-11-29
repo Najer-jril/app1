@@ -45,6 +45,7 @@ class Window(QWidget):
         self.tabledata()
         self.combobox()
         self.update_skor.clicked.connect(lambda: self.skoring(self.ComboBox.currentText()))
+        self.undo_btn.clicked.connect(lambda: self.undo(self.ComboBox.currentText()))
         
     def tabledata(self):
         self.tableWidget.setSortingEnabled(False)
@@ -211,6 +212,7 @@ class Window(QWidget):
                 for mhs in data[prodi]:
                     if mhs["NIM"] == nim:
                         mhs["skor"] = skor_up
+            
 
             with open('db.json', 'w') as file:
                 json.dump(data, file, indent=4)
@@ -245,6 +247,54 @@ class Window(QWidget):
             msg.setWindowTitle("Ooops...")
             msg.exec_()
          
+    def undo(self, selected):
+        file2 = open("rule1.json", "r")
+        data2 = json.load(file2)
+        file = open("db.json", "r")
+        data = json.load(file)
+        nim = self.Ledit_NIM.text()
+
+        try:
+            prodi = nim[0] + nim[1]
+            for i in data[prodi]:
+                 if i["NIM"] == nim:
+                    data_m = dict(i)
+                    print (data_m)
+
+            rules = data2["rule"]
+
+            msg = QMessageBox()
+            msg.setText("Apakah anda yakin?")
+            msg.setWindowTitle("KONFIRMASI")
+            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            returnValue = msg.exec()
+
+            if returnValue == QMessageBox.Ok:
+                 
+                for j in rules:
+                    if selected == j["kesalahan"]:
+                        print (j)
+                        poin = 0
+                        poin += int(j['poin'])
+                skor1 = data_m["skor"]
+                skor_up = skor1 + poin
+                print(skor_up)
+
+                for mhs in data[prodi]:
+                    if mhs["NIM"] == nim:
+                        mhs["skor"] = skor_up
+            
+
+            with open('db.json', 'w') as file:
+                json.dump(data, file, indent=4)
+            self.refresh()
+        except:
+            msg = QMessageBox()
+            msg.setText("Masukkan NIM yang akan diubah terlebih dahulu")
+            msg.setWindowTitle("Ooops...")
+            msg.exec_()
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
